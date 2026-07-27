@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 7 — Inline Styles</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="../vendor/react.development.js"></script>
+    <script src="../vendor/react-dom.development.js"></script>
+    <script src="../vendor/babel.min.js"></script>
+    <script type="text/babel">
+      ReactDOM.render(
+        <div>
+          <h1 style={{ color: "red" }}>Hello Style!</h1>
+          <p>Add a little style!</p>
+        </div>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
