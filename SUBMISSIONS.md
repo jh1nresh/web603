@@ -4,7 +4,7 @@ Repository: https://github.com/jh1nresh/web603
 
 The links below identify the file to submit for each real GAP submission slot.
 Items marked CodeSandbox must be imported to CodeSandbox and submitted there;
-a GitHub URL is not a substitute for those four assignments.
+a GitHub URL is not a substitute for those assignments.
 
 ## Week 1
 
@@ -21,7 +21,7 @@ a GitHub URL is not a substitute for those four assignments.
 | GAP item | Required format | Completed source |
 | --- | --- | --- |
 | Day 1 Exercise | GitHub URL | [Forms and API flow](https://github.com/jh1nresh/web603/blob/main/src/Week2.jsx) |
-| Day 1 Homework | No distinct slot in supplied PDF | The supplied PDF duplicates Day 2 Exercise and directs submission to Week 2 Day 2 Exercise |
+| Day 1 Homework | CodeSandbox URL | [Forms and API source](https://github.com/jh1nresh/web603/blob/main/src/Week2.jsx) |
 | Day 2 Exercise | GitHub URL | [React Router implementation](https://github.com/jh1nresh/web603/blob/main/src/Week2.jsx) |
 | Day 2 Homework | CodeSandbox URL | [Todo List V4 source](https://github.com/jh1nresh/web603/blob/main/src/Week2.jsx) |
 | Day 3 Review | No separate submission | Review only |
@@ -44,8 +44,9 @@ a GitHub URL is not a substitute for those four assignments.
 | Day 1 Exercise | GitHub URL | [DOM APIs](https://github.com/jh1nresh/web603/blob/main/src/Week4.jsx) |
 | Day 1 Homework | GitHub URL | [Weather app](https://github.com/jh1nresh/web603/blob/main/src/Week4.jsx) |
 | Day 2 Exercise | GitHub URL plus screenshots | [Algorithms source](https://github.com/jh1nresh/web603/blob/main/src/Week4.jsx) and [evidence](https://github.com/jh1nresh/web603/tree/main/evidence) |
-| Day 2 Homework | CodeSandbox URL | [Todo List V5 source](https://github.com/jh1nresh/web603/blob/main/src/Week4.jsx) |
-| Day 3 Review | No separate submission | Review only |
+| Day 2 Homework | GitHub URL | [Todo List V5 source](https://github.com/jh1nresh/web603/blob/main/src/Week4.jsx) |
+| Day 3 Assignment | GitHub commit #4 URL | [Data structures and algorithms review](https://github.com/jh1nresh/web603/blob/main/evidence/week4-day3-review.md) |
+| Project 3 Task 1 and 2 | PDF file | Pending the separate Project 3 requirements |
 
 The Week 4 Day 1 Exercise PDF says to post to “Week 3 Day 1 Exercise.” That is
 inconsistent with the filename and lesson sequence and appears to be a typo in
