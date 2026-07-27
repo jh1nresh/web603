@@ -8,6 +8,7 @@ import {
   quickSort,
   sortProducts,
   sortTodos,
+  weekFromHash,
 } from "../src/lib.js";
 
 test("sortTodos supports ascending and descending text order", () => {
@@ -57,3 +58,9 @@ test("Kelvin converts to rounded Fahrenheit", () => {
   assert.equal(kelvinToFahrenheit(273.15), 32);
 });
 
+test("week routing preserves assignment anchors and harmless hashes", () => {
+  assert.equal(weekFromHash("#week-4"), 4);
+  assert.equal(weekFromHash("#w4d2-exercise"), 4);
+  assert.equal(weekFromHash("#w3d3-assignment"), 3);
+  assert.equal(weekFromHash("#top", 4), 4);
+});

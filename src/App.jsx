@@ -4,6 +4,7 @@ import Week1 from "./Week1";
 import Week2 from "./Week2";
 import Week3 from "./Week3";
 import Week4 from "./Week4";
+import { weekFromHash } from "./lib";
 
 const weekComponents = {
   1: Week1,
@@ -12,17 +13,17 @@ const weekComponents = {
   4: Week4,
 };
 
-function readWeekFromHash() {
-  const match = window.location.hash.match(/^#week-(\d)$/);
-  return match ? Number(match[1]) : 1;
-}
-
 export default function App() {
-  const [activeWeek, setActiveWeek] = useState(readWeekFromHash);
+  const [activeWeek, setActiveWeek] = useState(() =>
+    weekFromHash(window.location.hash),
+  );
   const Week = weekComponents[activeWeek];
 
   useEffect(() => {
-    const onHashChange = () => setActiveWeek(readWeekFromHash());
+    const onHashChange = () =>
+      setActiveWeek((currentWeek) =>
+        weekFromHash(window.location.hash, currentWeek),
+      );
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
@@ -96,4 +97,3 @@ export default function App() {
     </div>
   );
 }
-

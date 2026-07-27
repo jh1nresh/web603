@@ -33,6 +33,5 @@ http://localhost:8080/Demo1/demo1.html
 ```bash
 cd Demo6/my-app
 npm install
-npm start
+npm run dev
 ```
-

@@ -50,3 +50,10 @@ export function kelvinToFahrenheit(kelvin) {
   return Math.round((kelvin - 273.15) * 1.8 + 32);
 }
 
+export function weekFromHash(hash, fallback = 1) {
+  const routeMatch = hash.match(/^#week-(\d)$/);
+  const assignmentMatch = hash.match(/^#w(\d)d\d-/);
+  const week = Number(routeMatch?.[1] ?? assignmentMatch?.[1]);
+
+  return week >= 1 && week <= 4 ? week : fallback;
+}
