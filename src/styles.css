@@ -1,0 +1,617 @@
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #17231d;
+  background: #f1efe8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+.button-link {
+  border: 1px solid #17231d;
+  border-radius: 999px;
+  background: #fbfaf6;
+  color: #17231d;
+  cursor: pointer;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+  transition:
+    transform 150ms ease,
+    background 150ms ease;
+}
+
+button:hover,
+.button-link:hover {
+  background: #d8ff71;
+  transform: translateY(-1px);
+}
+
+button.active {
+  background: #17231d;
+  color: #fff;
+}
+
+input,
+select {
+  border: 1px solid #899189;
+  border-radius: 0.6rem;
+  background: #fff;
+  padding: 0.72rem 0.8rem;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  min-height: 100vh;
+  height: 100vh;
+  flex-direction: column;
+  border-right: 1px solid #bac0b9;
+  background: #17231d;
+  color: #f7f4e9;
+  padding: 2rem 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand > span {
+  display: grid;
+  width: 2.7rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #d8ff71;
+  border-radius: 50%;
+  color: #d8ff71;
+  font-family: Georgia, serif;
+  font-size: 1.4rem;
+}
+
+.brand div {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand small {
+  color: #aab4ab;
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 4rem;
+}
+
+.sidebar nav button {
+  display: flex;
+  justify-content: space-between;
+  border-color: #536057;
+  background: transparent;
+  color: #fff;
+}
+
+.sidebar nav button.active {
+  border-color: #d8ff71;
+  background: #d8ff71;
+  color: #17231d;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  color: #87938b;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+main {
+  min-width: 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 4rem;
+  min-height: 68vh;
+  align-items: end;
+  border-bottom: 1px solid #bac0b9;
+  padding: 5rem clamp(2rem, 6vw, 6rem);
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #526058;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(3.8rem, 8vw, 8.2rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.84;
+}
+
+.hero h1 em {
+  color: #276446;
+  font-weight: 400;
+}
+
+.week-index {
+  border-top: 1px solid #17231d;
+  padding-top: 1rem;
+}
+
+.week-index > p {
+  font-weight: 700;
+}
+
+.week-index ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.week-index li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid #cbd0ca;
+  padding: 0.85rem 0;
+}
+
+.week-index a {
+  font-weight: 650;
+}
+
+.week-index span {
+  color: #6c756f;
+  font-size: 0.9rem;
+}
+
+.lesson {
+  border-bottom: 1px solid #bac0b9;
+  padding: 5rem clamp(2rem, 6vw, 6rem);
+}
+
+.lesson-heading {
+  max-width: 760px;
+  margin-bottom: 2.5rem;
+}
+
+.lesson h2 {
+  margin: 0 0 0.7rem;
+  font-family: Georgia, serif;
+  font-size: clamp(2.3rem, 4vw, 4.2rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.lesson-heading > p:last-child {
+  color: #59645d;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.two-column,
+.three-column,
+.product-grid,
+.todo-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.three-column {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.todo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.demo-card,
+.todo-day,
+.product-card,
+.weather-card,
+.portfolio-shell,
+.router-demo,
+.crud-shell,
+.dom-demo {
+  border: 1px solid #aab1aa;
+  border-radius: 1rem;
+  background: #fbfaf6;
+  padding: 1.4rem;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.demo-card h3,
+.todo-day h3,
+.product-card h3 {
+  margin: 0;
+}
+
+.button-row,
+.tab-list,
+.stepper,
+.shop-toolbar,
+.weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.result {
+  border-left: 3px solid #276446;
+  color: #276446;
+  font-weight: 650;
+  padding-left: 0.8rem;
+}
+
+.span-all {
+  grid-column: 1 / -1;
+}
+
+.todo-shell {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.todo-day-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.todo-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-top: 1px solid #d7dad5;
+  padding-top: 0.5rem;
+}
+
+.todo-list li.is-done .todo-title {
+  color: #879087;
+  text-decoration: line-through;
+}
+
+.icon-button,
+.todo-title {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.2rem;
+  text-align: left;
+}
+
+.todo-title:hover,
+.icon-button:hover {
+  background: transparent;
+  transform: none;
+}
+
+.note-box,
+.notice {
+  border: 1px solid #276446;
+  border-radius: 0.8rem;
+  background: #e3f3e9;
+  padding: 1rem 1.2rem;
+}
+
+.notice {
+  margin: 1rem 0;
+  line-height: 1.55;
+}
+
+.notice-success {
+  margin: 2rem clamp(2rem, 6vw, 6rem);
+  background: #d8ff71;
+}
+
+.anchor-target {
+  display: block;
+  scroll-margin-top: 1rem;
+}
+
+#w1d3-review > .notice,
+#w2d3-review > .notice {
+  margin: 2rem clamp(2rem, 6vw, 6rem);
+}
+
+.add-form,
+.weather-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tab-list {
+  border-bottom: 1px solid #afb6af;
+  padding-bottom: 0.8rem;
+}
+
+.tab-panel {
+  padding-top: 1rem;
+}
+
+.router-demo nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.route-screen {
+  min-height: 160px;
+  padding-top: 2rem;
+}
+
+.avatar {
+  display: grid;
+  width: 4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #17231d;
+  color: #d8ff71;
+  font-weight: 800;
+}
+
+.data-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.data-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid #c9cec9;
+  padding-top: 0.8rem;
+}
+
+.data-list h3,
+.data-list p {
+  margin: 0;
+}
+
+button.danger {
+  border-color: #9f3d3d;
+  color: #9f3d3d;
+}
+
+.shop-toolbar {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.shop-toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.product-card {
+  text-align: center;
+}
+
+.product-emoji,
+.weather-icon {
+  display: block;
+  font-size: 4rem;
+}
+
+.price {
+  color: #276446;
+  font-weight: 800;
+}
+
+.stepper {
+  justify-content: center;
+}
+
+.checkout-screen {
+  border: 1px solid #17231d;
+  border-radius: 1rem;
+  background: #17231d;
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+}
+
+.checkout-screen button {
+  margin: 0.3rem;
+}
+
+.portfolio-shell {
+  margin-top: 1rem;
+  background: #d8ff71;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.portfolio-grid span {
+  border-top: 1px solid #17231d;
+  padding-top: 0.5rem;
+}
+
+.dom-demo {
+  transition:
+    color 180ms ease,
+    background 180ms ease;
+}
+
+.dom-demo label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.click-target {
+  margin: 2rem 1rem 1rem 0;
+}
+
+.weather-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.weather-form {
+  align-items: end;
+}
+
+.weather-card {
+  max-width: 520px;
+  text-align: center;
+}
+
+.weather-temp {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 4rem;
+}
+
+.weather-details {
+  justify-content: center;
+}
+
+.weather-details span {
+  border-radius: 999px;
+  background: #e4e7e2;
+  padding: 0.5rem 0.8rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem clamp(2rem, 6vw, 6rem);
+}
+
+@media (max-width: 1000px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    min-height: 0;
+    height: auto;
+  }
+
+  .sidebar nav {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1.5rem;
+  }
+
+  .sidebar-note {
+    display: none;
+  }
+
+  .hero,
+  .two-column,
+  .three-column {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .sidebar nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    min-height: 0;
+    padding-top: 3rem;
+  }
+
+  .product-grid,
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .week-index li {
+    grid-template-columns: 1fr;
+  }
+}
