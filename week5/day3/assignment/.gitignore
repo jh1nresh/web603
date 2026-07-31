@@ -1,0 +1,4 @@
+node_modules/
+react-app/build/
+.env
+*.log
