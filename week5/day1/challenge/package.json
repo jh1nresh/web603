@@ -1,0 +1,12 @@
+{
+  "name": "m6-week1-day1-group-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WEB603 Mongoose Group model challenge",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "mongoose": "^8.0.0"
+  }
+}
