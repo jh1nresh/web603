@@ -1,0 +1,10 @@
+{
+  "name": "m6-w2-d2-group-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Redux shopping cart action types, action creators and reducer",
+  "scripts": {
+    "demo": "node demo.js"
+  }
+}
