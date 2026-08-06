@@ -6,5 +6,8 @@
   "description": "Redux shopping cart action types, action creators and reducer",
   "scripts": {
     "demo": "node demo.js"
+  },
+  "dependencies": {
+    "redux": "^5.0.1"
   }
 }

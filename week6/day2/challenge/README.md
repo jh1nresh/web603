@@ -10,7 +10,9 @@ Redux scripts for a shopping cart feature. Products carry `itemId`, `itemName`,
 | `actionTypes.js` | The three action type constants |
 | `actionCreators.js` | One action creator per type, each taking only the data that action needs |
 | `App.js` | The reducer — a `switch` that returns a new state with spread syntax |
-| `demo.js` | Extra: a runner that dispatches every action so the transitions are visible |
+| `store.js` | Extra: the real Redux store, `createStore(cartReducer)` |
+| `demo.js` | Extra: calls the reducer directly, so each state transition is visible |
+| `storeDemo.js` | Extra: same scenario driven through `store.dispatch()` + `store.subscribe()` |
 
 ## State shape
 
@@ -42,7 +44,9 @@ Redux scripts for a shopping cart feature. Products carry `itemId`, `itemName`,
 Every case spreads: `{ ...state, cart: [...] }` and `{ ...item, qty }`. Nothing is
 mutated in place, so React re-renders correctly on reference change.
 
-## Run the demo
+## Run the demos
+
+The challenge only asks for the scripts, so the reducer works standalone:
 
 ```bash
 node demo.js
@@ -50,3 +54,14 @@ node demo.js
 
 Prints the cart after each action and asserts that the reducer returned new
 object/array references with the previous state left untouched.
+
+To see the same actions go through an actual Redux store:
+
+```bash
+npm install
+node storeDemo.js
+```
+
+`store.subscribe()` logs the line count, item count, and cart total after every
+`dispatch` — that callback is exactly the hook `react-redux` uses to decide when
+to re-render.
