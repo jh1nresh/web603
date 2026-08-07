@@ -1,0 +1,130 @@
+// Bootstrap 5 first, then TaskFlow's own layer on top.
+@import 'bootstrap/scss/bootstrap';
+
+// --- design tokens -------------------------------------------------------
+$navy: #2c3e50;
+$high: #e74c3c;
+$medium: #f39c12;
+$low: #2ecc71;
+
+$priority-colors: (
+  'high': $high,
+  'medium': $medium,
+  'low': $low,
+);
+
+// --- shell ---------------------------------------------------------------
+body {
+  background-color: #f4f6f8;
+}
+
+.taskflow-navbar {
+  background-color: $navy;
+}
+
+// --- cards ---------------------------------------------------------------
+.card {
+  border: 1px solid #e3e7ec;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+}
+
+.task-form .card-header {
+  background-color: $navy;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.auth-card {
+  border-top: 4px solid $navy;
+}
+
+.stats-bar {
+  font-size: 0.95rem;
+  color: #55606e;
+}
+
+// --- task rows -----------------------------------------------------------
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0;
+}
+
+.task-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #e3e7ec;
+  border-left-width: 5px;
+  border-radius: 0.5rem;
+  padding: 0.85rem 1rem;
+
+  // Colour-coded left border, one rule per priority.
+  @each $name, $color in $priority-colors {
+    &.priority-#{$name} {
+      border-left-color: $color;
+    }
+  }
+
+  &.completed .task-title {
+    text-decoration: line-through;
+    color: #98a2b3;
+  }
+}
+
+.task-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.task-title {
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.task-desc {
+  font-size: 0.875rem;
+  color: #667085;
+  word-break: break-word;
+}
+
+.priority-badge {
+  color: #fff;
+
+  @each $name, $color in $priority-colors {
+    &.badge-#{$name} {
+      background-color: $color;
+    }
+  }
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.empty-state {
+  color: #98a2b3;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border: 1px dashed #d0d5dd;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+// --- small screens -------------------------------------------------------
+@include media-breakpoint-down(sm) {
+  .task-card {
+    flex-wrap: wrap;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

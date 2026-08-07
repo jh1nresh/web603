@@ -1,0 +1,24 @@
+{
+  "name": "taskflow-client",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TaskFlow SPA — React 18, React Router v6, Axios, Bootstrap 5, SASS, PWA",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "sass": "^1.83.4",
+    "vite": "^5.4.11"
+  }
+}
