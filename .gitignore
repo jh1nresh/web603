@@ -1,6 +1,10 @@
 node_modules/
 dist/
 .cache/
+
+# Claude Code agent worktrees and local session state — never part of coursework
+.claude/
+
 .DS_Store
 .env
 *.log
