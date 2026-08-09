@@ -1,0 +1,98 @@
+:root {
+  color: #172033;
+  background: #f3f6fa;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f6fa;
+}
+
+.counter-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.counter-card {
+  width: min(100%, 520px);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #cfd8e6;
+  border-radius: 0.75rem;
+  box-shadow: 0 1.25rem 3rem rgba(31, 42, 68, 0.12);
+}
+
+.counter-card h1 {
+  margin: 0;
+  padding: 1.25rem 1.5rem 1rem;
+  font-size: clamp(2rem, 8vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  background: #0dcaf0;
+}
+
+.counter-value {
+  display: grid;
+  min-width: 3.25rem;
+  min-height: 3.25rem;
+  place-items: center;
+  padding: 0.45rem;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 0.35rem;
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-button,
+.reset-button {
+  min-height: 3.25rem;
+  border: 1px solid #667085;
+  box-shadow: 0 0.2rem 0 rgba(23, 32, 51, 0.22);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.counter-button {
+  min-width: 3.25rem;
+  font-size: 1.35rem;
+}
+
+.reset-button {
+  padding-inline: 1.25rem;
+}
+
+@media (max-width: 420px) {
+  .counter-controls {
+    gap: 0.55rem;
+    padding: 1rem;
+  }
+
+  .counter-button,
+  .counter-value {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .reset-button {
+    min-height: 2.75rem;
+    padding-inline: 0.8rem;
+  }
+}
