@@ -1,0 +1,15 @@
+.sphere-stage {
+  width: 100%;
+  height: clamp(420px, 65vh, 650px);
+  overflow: hidden;
+  background: #050912;
+  cursor: grab;
+}
+
+.sphere-stage:active {
+  cursor: grabbing;
+}
+
+.sphere-stage canvas {
+  display: block;
+}

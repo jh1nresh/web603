@@ -1,0 +1,34 @@
+{
+  "name": "week7-day1-redux-animation-exercise",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-vertex/core": "3.0.0",
+    "@react-vertex/geometry-hooks": "3.0.0",
+    "@react-vertex/material-hooks": "3.0.0",
+    "@react-vertex/math-hooks": "2.0.0",
+    "@react-vertex/orbit-camera": "3.0.0",
+    "@vx/gradient": "0.0.192",
+    "@vx/group": "0.0.190",
+    "@vx/hierarchy": "0.0.179",
+    "@vx/shape": "0.0.179",
+    "d3-hierarchy": "1.1.9",
+    "d3-shape": "1.3.7",
+    "d3-timer": "1.0.9",
+    "prop-types": "15.7.2",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-move": "6.5.0",
+    "react-router-dom": "5.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "5.4.19"
+  }
+}
