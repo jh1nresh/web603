@@ -1,0 +1,33 @@
+<!doctype html>
+<!--
+  Local preview of the CodePen version. It loads the exact same pen.css /
+  pen.js that go into the CodePen panes, and the same five CDN scripts, so
+  what renders here is what renders on CodePen.
+
+  Babel fetches pen.js over the network, so open this through a local server
+  rather than double-clicking the file:
+
+      cd week8/day1/exercise/codepen
+      python3 -m http.server 3001
+      # then visit http://localhost:3001/preview.html
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Redux Thunk Counter — CodePen preview</title>
+    <link rel="stylesheet" href="pen.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/redux@4.2.1/dist/redux.min.js" crossorigin></script>
+    <script src="https://unpkg.com/redux-thunk@2.4.2/dist/redux-thunk.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-redux@8.1.3/dist/react-redux.min.js" crossorigin></script>
+
+    <script src="https://unpkg.com/@babel/standalone@7.26.4/babel.min.js"></script>
+    <script type="text/babel" src="pen.js"></script>
+  </body>
+</html>

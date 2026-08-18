@@ -1,0 +1,89 @@
+/* CodePen CSS pane */
+
+:root {
+  color: #172033;
+  background: #f3f6fa;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f6fa;
+}
+
+.counter-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.counter-card {
+  width: min(100%, 420px);
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #cfd8e6;
+  border-radius: 0.75rem;
+  box-shadow: 0 1.25rem 3rem rgba(31, 42, 68, 0.12);
+  text-align: center;
+}
+
+.counter-card h1 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.counter-button,
+.reset-button {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  padding-inline: 0.75rem;
+  background: #0dcaf0;
+  color: #fff;
+  border: 1px solid #667085;
+  border-radius: 0.35rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.change-count-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.change-count-form input {
+  width: 5rem;
+  padding: 0.4rem;
+  border: 1px solid #cfd8e6;
+  border-radius: 0.35rem;
+}
+
+.change-count-form button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid #667085;
+  border-radius: 0.35rem;
+  background: #172033;
+  color: #fff;
+  cursor: pointer;
+}
