@@ -16,6 +16,9 @@ instead of a plain action object; the thunk middleware wired up in
   count to" field), connected to the store with `react-redux`'s `connect`
 - `src/index.js` — renders `Count` wrapped in `<Provider store={store}>`
 
+A CodePen-ready version of this same app (single JS file, CDN globals instead
+of imports) lives in [`../codepen`](../codepen).
+
 ## Run
 
 ```bash
