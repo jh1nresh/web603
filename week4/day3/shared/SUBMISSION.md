@@ -38,10 +38,11 @@ Submitted to GAP and read back as `Submitted for grading`:
 - Day 2 Homework
 - Day 3 Assignment, using commit #4:
   `28359ecbdc66432c8e633b23cd9c92bf11fec746`
+- Project 3 Task 1 and 2, using `Project3-Task1-Task2.pdf`
 
-`Project3-Task1-Task2.pdf` is corrected and validated but remains pending
-upload because the local Mac was locked and Chrome file-upload access was
-unavailable.
+Project 3 Task 3 (the TaskFlow app in `project3/`) is committed on `main` as
+`841264f0b2e0e738d80247fa0b1da191cbd246b5`, and is not part of this Week 4
+submission slot.
 
 ## Evidence
 

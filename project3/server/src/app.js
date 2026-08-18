@@ -1,4 +1,5 @@
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
@@ -55,7 +56,9 @@ export function createApp() {
   // In production the API also serves the built SPA, so one deployment covers
   // both and the auth cookie stays same-origin.
   if (process.env.NODE_ENV === 'production') {
-    const clientDist = path.resolve(process.cwd(), '../client/dist')
+    // Resolved from this file, not from cwd, so the host can start the server
+    // from any working directory (Render runs it from the repo's root dir).
+    const clientDist = fileURLToPath(new URL('../../client/dist', import.meta.url))
     app.use(express.static(clientDist))
     app.get(/^\/(?!api\/).*/, (req, res) => res.sendFile(path.join(clientDist, 'index.html')))
   }

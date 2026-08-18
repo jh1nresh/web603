@@ -110,10 +110,11 @@ Front end, driven in a browser:
 - `document.cookie` is empty (HTTP-only), the service worker registers, and the manifest parses with three icon entries
 - Layout verified at 375 px and 1280 px
 
-## Deployment notes
+## Deployment
 
 `NODE_ENV=production` makes the API serve `client/dist` and marks cookies
-`secure`, so a single Render/Railway service can host both halves over HTTPS.
-Build the client first (`npm run build` in `client/`), set `MONGO_URI`,
-`JWT_SECRET`, and `SESSION_SECRET` in the host's environment, then start the
-server.
+`secure`, so a single Render/Railway service hosts both halves over HTTPS.
+[`render.yaml`](../render.yaml) in the repository root defines that service
+(build, start command, health check, and environment variables), and
+[DEPLOY.md](DEPLOY.md) walks through MongoDB Atlas, the Render blueprint, and
+the checks to run against the live URL.
