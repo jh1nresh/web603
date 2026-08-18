@@ -35,9 +35,10 @@ Submission status checked directly in GAP on 2026-07-26:
 - Week 3: five submission slots are graded 0% and locked.
 - Week 4: Day 1 Exercise, Day 1 Homework, Day 2 Exercise, Day 2 Homework, and
   Day 3 Assignment were submitted successfully.
-- Project 3 Task 1 and 2: the corrected PDF is in `week4/day3/`, but the final
-  upload remains pending because the local Mac was locked and Chrome
-  file-upload access was unavailable.
+- Project 3 Task 1 and 2: submitted, using the corrected
+  `week4/day3/Project3-Task1-Task2.pdf`.
+- Project 3 Task 3: the TaskFlow app lives in `project3/` on `main`; see
+  `project3/README.md` and `project3/DEPLOY.md`.
 
 ## Where the work is
 

@@ -1,0 +1,35 @@
+# Render Blueprint — deploys project3/ (TaskFlow) as one web service.
+# Render only reads a blueprint from the repository root, which is why this
+# file sits here rather than inside project3/. See project3/DEPLOY.md.
+#
+# One service hosts both halves: the build compiles the React client and the
+# Express server serves client/dist alongside /api, so the auth cookie stays
+# same-origin and Render's TLS gives the app HTTPS.
+
+services:
+  - type: web
+    name: taskflow
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: project3
+    buildCommand: npm --prefix client ci && npm --prefix client run build && npm --prefix server ci --omit=dev
+    startCommand: npm --prefix server start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      # MongoDB Atlas connection string — set in the Render dashboard, never here.
+      - key: MONGO_URI
+        sync: false
+      # Render generates these once and keeps them across deploys.
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SESSION_SECRET
+        generateValue: true
+      # The app is same-origin in production; set this to the service's own
+      # https://<name>.onrender.com URL after the first deploy.
+      - key: CLIENT_ORIGIN
+        sync: false
