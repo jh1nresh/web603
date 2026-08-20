@@ -1,7 +1,7 @@
 // TaskFlow service worker — app shell caching for offline browsing.
 // Bump CACHE_VERSION whenever the shell changes so old caches get cleared.
 
-const CACHE_VERSION = 'taskflow-v1'
+const CACHE_VERSION = 'taskflow-v2'
 const SHELL = ['/', '/index.html', '/manifest.webmanifest', '/icons/icon-192.png']
 
 self.addEventListener('install', (event) => {
@@ -27,6 +27,17 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return
 
   const url = new URL(request.url)
+
+  // Vite dev-server paths must never be cached: the dependency hashes change
+  // on every restart, and a stale main.jsx imports URLs that no longer exist,
+  // which leaves the page blank. These paths don't exist in a production build.
+  if (
+    url.pathname.startsWith('/@') ||
+    url.pathname.startsWith('/src/') ||
+    url.pathname.startsWith('/node_modules/')
+  ) {
+    return
+  }
 
   // API calls are never served stale — tasks must reflect the database.
   if (url.pathname.startsWith('/api/')) {
