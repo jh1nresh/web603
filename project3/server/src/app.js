@@ -54,8 +54,10 @@ export function createApp() {
   app.use('/api/tasks', taskRoutes)
 
   // In production the API also serves the built SPA, so one deployment covers
-  // both and the auth cookie stays same-origin.
-  if (process.env.NODE_ENV === 'production') {
+  // both and the auth cookie stays same-origin. On Vercel the platform serves
+  // client/dist itself and routes only /api here, so this block is skipped —
+  // client/dist isn't bundled into the serverless function.
+  if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
     // Resolved from this file, not from cwd, so the host can start the server
     // from any working directory (Render runs it from the repo's root dir).
     const clientDist = fileURLToPath(new URL('../../client/dist', import.meta.url))
