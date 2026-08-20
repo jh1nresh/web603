@@ -1,0 +1,25 @@
+{
+  "name": "taskflow",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TaskFlow — Vercel deployment root. The client builds to client/dist (served as static assets) and api/index.js runs the Express app as a serverless function.",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "build": "npm --prefix client ci && npm --prefix client run build"
+  },
+  "comment": "These dependencies mirror server/package.json. Vercel installs the serverless function's dependencies from this root manifest, so both files must be kept in step.",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+  }
+}
